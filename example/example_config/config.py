@@ -22,7 +22,7 @@ class ExampleConfig(SentryConfig):
     class SectionTwo(SentrySection):
         ST_OptionOne = SentryOption(
             default=1,
-            criteria=[IntRequired, MustBeOne],
+            criteria=[IntRequired, MustBeOne],  # IntRequired will attempt to convert the value to an int.
             description='I represent option one of section two of example.ini; I must be an int which equals 1.'
         )
 

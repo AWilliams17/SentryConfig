@@ -6,7 +6,7 @@ from sentry_config.criteria import *
 class MustBeOne(SentryCriteria):
     def criteria(self, value):
         if value != 1:
-            return "I must be equal to one!"
+            return "I must be equal to one!"  # The return value here is used in the CriteriaNotMet exception.
 
 
 class LenMustBeFive(SentryCriteria):
