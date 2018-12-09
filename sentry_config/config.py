@@ -1,7 +1,7 @@
 # ToDo: Add optional output to read_config and flush_config to be returned if requested.
 # ToDo: Make it put the sections & options in the order in which they are defined in the config representation class
-from exceptions import *
-from criteria import SentryCriteria
+from sentry_config.exceptions import *
+from sentry_config.criteria import SentryCriteria
 from configparser import ConfigParser
 from inspect import getmembers
 
