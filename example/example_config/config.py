@@ -6,7 +6,6 @@ from example_config.option_validators import *
 
 
 class ExampleConfig(SentryConfig):
-    """ Represents the server configuration file. """
     class SectionOne(SentrySection):
         SO_OptionOne = SentryOption(
             default="I am used when an option does not contain a value in the ini, or it doesn't load properly.",
