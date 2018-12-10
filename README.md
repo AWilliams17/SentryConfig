@@ -1,5 +1,5 @@
 # sentry-config: An application ini parsing solution
-I originally was using this in [Crow-IRCServer](https://github.com/AWilliams17/PasteMate), but I've been wanting to use it
+I originally was using this in [Crow-IRCServer](https://github.com/AWilliams17/Crow-IRCServer), but I've been wanting to use it
 in some other things so I figured I'd go ahead and yank it out and make it it's own package and throw it up on PyPi.
 What this essentially does is make it extremely easy to load and save .ini files. With validation. I'll demonstrate.
 
@@ -74,6 +74,10 @@ class ExampleSection:
 Upon loading an ini, the value will be first converted into an int, and then it will run through any further criteria.  
 If at any point a criteria check fails, a CriteriaNotMet exception will be raised with appropriate information as to which option  
 failed to validate.
+
+## Installation
+This package is on PyPi. This package is developed for Python3.7.  
+Use ```pip install SentryConfig``` to install it.
 
 ## Further examples
 I've included an example right in the repo, check out the 'example' directory.  

@@ -9,7 +9,7 @@ with open("README.md", "r") as f:
 
 setup(
     name='SentryConfig',
-    version='1.0.0',
+    version='1.0.1',
     description='Lightweight project configuration management/parsing package.',
     long_description="For more information, see https://github.com/AWilliams17/SentryConfig/README.md",
     url='https://github.com/AWilliams17/SentryConfig/',
