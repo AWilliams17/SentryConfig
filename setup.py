@@ -11,6 +11,7 @@ setup(
     name='SentryConfig',
     version='1.0.0',
     description='Lightweight project configuration management/parsing package.',
+    long_description="For more information, see https://github.com/AWilliams17/SentryConfig/README.md",
     url='https://github.com/AWilliams17/SentryConfig/',
     author='Austin Williams',
     author_email='awilliams17412@gmail.com',
