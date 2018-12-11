@@ -1,4 +1,4 @@
-# sentry-config: An application ini parsing solution
+# SentryConfig: An application ini parsing solution
 I originally was using this in [Crow-IRCServer](https://github.com/AWilliams17/Crow-IRCServer), but I've been wanting to use it
 in some other things so I figured I'd go ahead and yank it out and make it it's own package and throw it up on PyPi.
 What this essentially does is make it extremely easy to load and save .ini files. With validation. I'll demonstrate.
@@ -12,11 +12,11 @@ from sentry-config.validators import IntRequired
 
 class ExampleConfig(SentryConfig):  # ExampleConfig essentially acts as a representation of the external .ini file.
     class ExampleSection:  # This will translate to [ExampleSection] in the .ini,
-        OptionOne = SentryOption(  # This will translate to optionone in the .ini
+        OptionOne = SentryOption(
             default=1,
             criteria=IntRequired,
             description="This will translate to 'optionone' in the .ini file"
-		)
+        )
 
         OptionTwo = SentryOption(
             default="Hello world",
@@ -42,13 +42,16 @@ The .ini which is produced is as follows:
 optionone = 1
 optiontwo = Hello world
 ```
-You can then read values from this .ini which will automatically set the option properties in the config container:
+You can then read values from this .ini which will automatically set the option variables in the config container:
 ```python
-config_container.read_config
+config_container.read_config()
 print(config_container.ExampleSection.OptionOne)  # Prints 1
 ```
 Options which get loaded from a .ini will automatically be parsed and converted to their appropriate types as specified in the  
-sentry option criteria argument. EG: IntRequired parses 'optionone' into an int, before it is used as the value of OptionOne.
+sentry option criteria argument. EG: IntRequired parses 'optionone' into an int, before it is used as the value of OptionOne.  
+```read_config()``` also accepts a keyword argument, ```set_default_on_fail```, which defaults to False. When set to True,  
+any options which failed to be set during the read process will take on their default values. If there is no default value for  
+an option, a ```NoDefaultGivenError``` exception is raised.
 
 ## Criteria
 Sentry uses criteria when validating and converting values from an ini file.  
@@ -60,7 +63,7 @@ from sentry_config.criteria import SentryCriteria
 class MustBeOne(SentryCriteria):
     def criteria(self, value):
         if value != 1:
-            return "I must be equal to one!"  # The return value here is used in the CriteriaNotMet exception.
+            return "I must be equal to one!"  # The return value here is used in the CriteriaNotMetError exception.
 ```
 And back in the ExampleConfig class defined earlier,
 ```python
@@ -95,7 +98,7 @@ class ExampleConfig(SentryConfig):
 ```
 Will just not work. It produces a blank .ini. I'll eventually look into fixing that.
 
-## Contributing  
+## Contributing
 I don't really have any qualms what so ever about someone working on this since I probably won't get much done on it, as it  
 works fine as is. If you wish to make pull requests, feel free. Just follow what the overall structure and style in the code  
 is though.
