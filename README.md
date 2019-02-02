@@ -104,4 +104,4 @@ works fine as is. If you wish to make pull requests, feel free. Just follow what
 is though.
 
 ## License
-On that note, this is licensed under the GNU General Public License, so feel free to do whatever you want the code.
+On that note, this is licensed under the GNU General Public License, so feel free to do whatever you want with the code.
