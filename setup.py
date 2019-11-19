@@ -25,7 +25,7 @@ setup(
     ],
 
     keywords='config configuration configuration-manager',
-    packages=['sentry_config'],
+    packages=['sentryconfig'],
 
     project_urls={
         'Bug Reports': 'https://github.com/AWilliams17/SentryConfig/issues',
