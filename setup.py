@@ -30,5 +30,5 @@ setup(
     project_urls={
         'Bug Reports': 'https://github.com/AWilliams17/SentryConfig/issues',
         'Source': 'https://github.com/AWilliams17/SentryConfig/'
-    },
+    }, install_requires=['pytest']
 )
